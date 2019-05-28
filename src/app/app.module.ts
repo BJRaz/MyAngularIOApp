@@ -1,28 +1,22 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
 import { MyModModule } from './my-mod/my-mod.module';
-import { NavbarComponent } from './core/navbar/navbar.component';
-import {RouterModule,Routes} from '@angular/router';
-import { MyCompComponent } from './my-mod/my-comp/my-comp.component';
+import { CoreModule } from './core/core.module';
+import { AppRoutingModule } from './app-routing.module';
 
-const appRoutes = [
-  {
-    path: 'my-area',
-    component: MyCompComponent
-  }
-]
+
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     MyModModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true})
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

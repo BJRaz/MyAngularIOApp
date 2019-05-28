@@ -7,17 +7,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./my-comp.component.css']
 })
 export class MyCompComponent implements OnInit {
-  @Input() name : string;
+  @Input() name: string;
   @Output() yo = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
   clicked(): void {
-    console.log("I'm depressed...");
+    console.log('I\'m depressed...');
     this.yo.emit(null);
   }
 
